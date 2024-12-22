@@ -1,70 +1,53 @@
-# Clustering Project
+# Warehouse and Retail Sales - Customer Segmentation
 
 ## Overview
-This project implements **K-Means Clustering** for customer segmentation using a dataset with categorical and numerical features. The focus is on data preparation, algorithm selection, and clustering performance evaluation.
+This project performs **unsupervised clustering** on customer records from a warehouse and retail sales database. The goal is to segment customers into clusters based on their purchasing behaviors, enabling the business to:
+- Optimize the significance of each customer.
+- Modify products according to distinct needs and behaviors.
+- Address concerns specific to different types of customers.
 
 ---
 
 ## Key Steps
 ### Data Preparation
-- Applied feature engineering techniques:
-  - **One-Hot Encoding** for categorical variables (`BRAND NAME`, `SUPPLIER`).
-  - Dimensionality reduction to analyze variance.
+- **Libraries Used**:
+  - `Pandas`, `NumPy` for data manipulation.
+  - `Matplotlib`, `Seaborn` for visualization.
+  - `scikit-learn` for clustering algorithms.
+- Removed unnecessary columns: 
+  - Dropped `ITEM DESCRIPTION`, `QUANTITY`, `STD UNIT`, `NUMBER UNIT`, and unnamed columns for data cleaning.
+- Applied **One-Hot Encoding** to preprocess categorical variables.
 
-### Model Selection
-- Chose **K-Means Clustering** for its efficiency with large datasets and simplicity in implementation.
-
-### Evaluation Metrics
-- **Calinski-Harabasz Score**: Higher values indicate better-defined clusters.
-- **Davies-Bouldin Index**: Lower values indicate better clustering quality.
-
-Based on these metrics, the optimal number of clusters was determined to be **2**.
-
----
-
-## Challenges and Solutions
-### Challenges
-1. Lack of domain knowledge complicated dataset understanding.
-2. The `description` column contained unstructured information, making preprocessing difficult.
-
-### Solutions
-1. Used correlation techniques to simplify data relationships.
-2. Applied **Pearson Correlation** to identify significant features effectively.
+### Clustering Algorithm
+- Implemented **unsupervised clustering** using techniques like K-Means for customer segmentation.
 
 ---
 
 ## Results
-- Successfully implemented clustering with **2 clusters**, achieving optimized evaluation metric scores.
+- Successfully segmented customers into distinct clusters based on their purchasing behavior.
 
 ---
 
-## Key Learnings
-- The importance of feature engineering and iterative evaluation in clustering success.
-- Domain knowledge enhances preprocessing and feature selection.
+## Challenges
+1. Large volume of unstructured data requiring significant preprocessing.
+2. Identifying key features for clustering without domain expertise.
+
+### Solutions
+- Applied feature engineering to preprocess data and improve clustering accuracy.
 
 ---
 
-## Usage Instructions
-1. **Dataset Preparation**:
-   - Use one-hot encoding for categorical columns like `BRAND NAME` and `SUPPLIER`.
-   - Clean and preprocess text columns.
-2. **Running the Model**:
-   - Apply dimensionality reduction for variance analysis.
-   - Use the K-Means algorithm with varying `K` values.
-   - Evaluate clusters using the Calinski-Harabasz Score and Davies-Bouldin Index.
-3. **Interpreting Results**:
-   - Select the `K` value with optimal evaluation metrics.
+## Visualizations
+- Used `Matplotlib` and `Seaborn` to generate insights and analyze the cluster distribution.
 
 ---
 
-## Future Improvements
-- Incorporate domain knowledge for enhanced feature selection.
-- Experiment with advanced clustering techniques like DBSCAN or hierarchical clustering.
-- Automate feature engineering for complex datasets.
-- Visualize clusters for better interpretability.
+## Future Enhancements
+- Use advanced clustering algorithms like DBSCAN or hierarchical clustering for better results.
+- Incorporate domain-specific knowledge to improve data preprocessing.
+- Automate the pipeline for larger datasets.
 
 ---
 
 ## License
 This project is open-source and available under the [MIT License](LICENSE).
-
